@@ -1,0 +1,14 @@
+[Unit]
+Description=Camera Stream Service
+After=network.target
+
+[Service]
+Type=simple
+User=svc_edgeai
+WorkingDirectory=/home/svc_edgeai/camera-stream
+ExecStart=/usr/bin/python3 /home/svc_edgeai/camera-stream/main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
